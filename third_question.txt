@@ -1,0 +1,132 @@
+mongod
+
+mongo
+
+MongoDB commands for databases
+View all databases
+show dbs
+
+Create a new or switch databases
+use dbName
+
+View Current database
+db
+
+Delete database
+db.dropDatabase()
+
+MongoDB commands for collections
+for showing the Collections
+show collections
+
+Create a collection named 'course_name'
+db.createCollection('course_name')
+
+Create a collection named 'course_name'
+db.course_name.drop()
+
+MongoDB commands for rows
+Show all rows in collection
+db.course_name.find()
+
+Show all rows in a collection (Pretiffied)
+db.course_name.find().pretty()
+
+Find the first row matching the object 
+db.course_name.findOne({name:'BBA'})
+
+Insert One Row
+db.course_name.insert({
+    'course_name': 'BBA',
+    'teacher': 'Suresh Sir'
+})
+
+Insert Many rows
+db.course_name.insertMany([{
+    'course_name': 'BBA',
+    'teacher': 'Suresh Sir', 
+    'student_name':'Om'
+},
+     {'course_name': 'Phd',
+    'teacher': 'Ankit Sir', 
+    'student_name':'Nikhil'
+},
+    {'course_name': 'LAW',
+    'teacher': 'Mukesh Sir',
+    'student_name':'Manju'
+},
+    {'course_name': 'MBA',
+    'teacher': 'Paresh Sir',
+    'student_name':'Gopal'
+},
+{
+    'course_name': 'BBA',
+    'teacher': 'Suresh Sir', 
+    'student_name':'Raju'
+},
+     {'course_name': 'Phd',
+    'teacher': 'Ankit Sir', 
+    'student_name':'Hamesh'
+},
+    {'course_name': 'LAW',
+    'teacher': 'Mukesh Sir',
+    'student_name':'Aman'
+},
+    {'course_name': 'MBA',
+    'teacher': 'Paresh Sir',
+    'student_name':'Hemant'
+},
+{'course_name': 'LAW',
+    'teacher': 'Mukesh Sir',
+    'student_name':'Kamlesh'
+},
+    {'course_name': 'MBA',
+    'teacher': 'Paresh Sir',
+    'student_name':'Dinesh'
+},
+{'course_name': 'LAW',
+    'teacher': 'Mukesh Sir',
+    'student_name':'Garima'
+},
+    {'course_name': 'MBA',
+    'teacher': 'Paresh Sir',
+    'student_name':'Umesh'
+},
+{'course_name': 'LAW',
+    'teacher': 'Mukesh Sir',
+    'student_name':'Naresh'
+}
+])
+
+Search in a MongoDB database
+db.course_name.find({course_name:'LAW'})
+
+Limit the number of students in output
+db.course_name.find().limit(2)
+
+Count the number of students in the output
+db.course_name.find().count()
+
+Update a row
+db.course_name.update({name: 'Phd'},
+{
+    'name': 'BBA',
+    'teacher': 'Suresh Sir',
+    'duration':1
+}, {upsert:true}
+ )
+
+MongoDB Increment Operator
+db.course_name.update({name: 'BBA'},
+{$inc:{
+    duration:2
+}})
+
+MongoDB Rename Operator
+db.course_name.update({course_name: 'Phd'},
+{$rename:{
+    Suresh Sir:'Ankit Sir'
+}})
+
+Delete row
+db.course_name.remove({name:'BBA'})

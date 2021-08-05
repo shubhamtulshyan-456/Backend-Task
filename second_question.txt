@@ -1,0 +1,169 @@
+mongod
+
+mongo
+
+MongoDB commands for databases
+View all databases
+show dbs
+
+Create a new or switch databases
+use dbName
+
+View Current database
+db
+
+Delete database
+db.dropDatabase()
+
+MongoDB commands for collections
+for showing the Collections
+show collections
+
+Create a collection named 'students_list'
+db.createCollection('students_list')
+
+Create a collection named 'students_list'
+db.students_list.drop()
+
+For Get list of all students
+db.students_list.find()
+
+Show all rows in a collection (Pretiffied)
+db.students_list.find().pretty()
+
+Find the row matching the object 
+db.students_list.findOne({student_name:'Shubham'})
+
+Insert One Row
+db.students_list.insert({
+    'student_name': 'Shubham'
+})
+
+Insert Many rows
+db.students_list.insertMany([{
+    'student_name': 'Mohit'
+},
+{
+    'student_name': 'Suresh'
+},
+{
+    'student_name': 'Komal'
+},
+{
+    'student_name': 'Sunita'
+},
+{
+    'student_name': 'Lokesh'
+},
+{
+    'student_name': 'Arun'
+},
+{
+    'student_name': 'Deepak'
+},
+{
+    'student_name': 'Hemant'
+},
+{
+    'student_name': 'Siddarth'
+},
+{
+    'student_name': 'Farhan'
+},
+{
+    'student_name': 'Tarun'
+},
+{
+    'student_name': 'Prateek'
+},
+{
+    'student_name': 'Priyansh'
+},
+{
+    'student_name': 'Priyanka'
+},
+{
+    'student_name': 'Pratham'
+},
+{
+    'student_name': 'Shubhang'
+},
+{
+    'student_name': 'Himanshu'
+},
+{
+    'student_name': 'Nitesh'
+},
+{
+    'student_name': 'Rahul'
+},
+{
+    'student_name': 'Gaurav'
+},
+{
+    'student_name': 'Sonam'
+},
+{
+    'student_name': 'Vikash'
+},
+{
+    'student_name': 'Cinmay'
+},
+{
+    'student_name': 'Gauri'
+},
+{
+    'student_name': 'Rohit'
+},
+{
+    'student_name': 'Monika'
+},
+{
+    'student_name': 'Praveen'
+},
+{
+    'student_name': 'Murli'
+},
+{
+    'student_name': 'Neha'
+},
+{
+    'student_name': 'Punit'
+},
+{
+    'student_name': 'Suyash'
+},
+{
+    'student_name': 'Aayush'
+},
+{
+    'student_name': 'Vishnu'
+},
+{
+    'student_name': 'Pawan'
+}
+])
+
+Get a single student / Search in a MongoDB database
+db.students_list.find({student_name:'Aayush'})
+
+Limit the number of students in output
+db.students_list.find().limit(2)
+
+Count the number of students in the output
+db.students_list.find().count()
+
+Create New Student record
+db.students_list.insert({
+    'student_name': 'Bimla'
+})
+
+Update a record
+db.students_list.update({student_name: 'Praveen'},
+{
+    'student_name': 'Reena'
+}, {upsert:true}
+ )
+
+Delete a record
+db.students_list.remove({student_name:'Neha'})
