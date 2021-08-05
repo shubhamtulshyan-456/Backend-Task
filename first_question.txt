@@ -1,0 +1,65 @@
+mongod is the host process for the database
+
+mongo is the command-line shell that connects to a specific instance of mongod. When run mongo with no parameters it defaults to connecting to the localhost on port 27017.
+
+MongoDB commands for databases
+View all databases
+show dbs
+
+Create a new or switch databases
+use dbName
+
+View Current database
+db
+
+MongoDB commands for collections
+for showing the Collections
+show collections
+
+Create a collection named 'students_schema'
+db.createCollection('students_schema')
+
+Create a collection named 'name, email, phone, city, country, courseId in students_schema'
+db.students_schema.insertMany([{
+    'student_name': ''
+},
+{
+    'student_email': ''
+},
+{
+    'student_phone': ''
+},
+{
+    'student_city': ''
+},
+{
+    'student_country': ''
+},
+{
+    'student_courseId': ''
+}
+])
+
+For Get list of all students
+db.students_schema.find()
+
+Show all rows in a collection (Pretiffied)
+db.students_schema.find().pretty()
+
+Create a collection named 'course_schema'
+db.createCollection('course_schema')
+
+Create a collection named 'name, teacher in course_schema'
+db.course_schema.insertMany([{
+    'course_name': ''
+},
+{
+    'course_teacher': ''
+}
+])
+
+For Get list of all courses
+db.course_schema.find()
+
+Show all rows in a collection (Pretiffied)
+db.course_schema.find().pretty()

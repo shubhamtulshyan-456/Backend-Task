@@ -1,0 +1,349 @@
+mongod is the host process for the database
+
+mongo is the command-line shell that connects to a specific instance of mongod. When run mongo with no parameters it defaults to connecting to the localhost on port 27017.
+
+MongoDB commands for databases
+View all databases
+show dbs
+
+Create a new or switch databases
+use dbName
+
+View Current database
+db
+
+Delete database
+db.dropDatabase()
+
+MongoDB commands for collections
+for showing the Collections
+show collections
+
+Create a collection named 'students_list'
+db.createCollection('students_list')
+
+Create a collection named 'students_list'
+db.students_list.drop()
+
+For Get list of all students
+db.students_list.find()
+
+Show all rows in a collection (Pretiffied)
+db.students_list.find().pretty()
+
+Find the row matching the object 
+db.students_list.findOne({student_name:'Shubham'})
+
+Insert One Row
+db.students_list.insert({
+    'student_name': 'Shubham',
+    'student_email':'shubham@gmail.com',
+    'student_phone':'9554621788',
+    'student_city':'Jaipur',
+    'student_country':'India',
+    'student_courseId':'Science'
+})
+
+Insert Many rows
+db.students_list.insertMany([{
+    'student_name': 'Mohit',
+    'student_email':'mohit@gmail.com',
+    'student_phone':'9555459783',
+    'student_city':'Jaipur',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Suresh',
+    'student_email':'Suresh@gmail.com',
+    'student_phone':'9555459788',
+    'student_city':'Kota',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Komal',
+    'student_email':'Komal@gmail.com',
+    'student_phone':'8855459788',
+    'student_city':'Amritsar',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Sunita',
+    'student_email':'Sunita@gmail.com',
+    'student_phone':'994251420',
+    'student_city':'Goa',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Lokesh',
+    'student_email':'Lokesh@gmail.com',
+    'student_phone':'9954213420',
+    'student_city':'Bihar',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Arun',
+    'student_email':'Arun@gmail.com',
+    'student_phone':'8874513420',
+    'student_city':'Patna',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Deepak',
+    'student_email':'Deepak@gmail.com',
+    'student_phone':'7745623420',
+    'student_city':'Surat',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Hemant',
+    'student_email':'Hemant@gmail.com',
+    'student_phone':'7745627415',
+    'student_city':'Rajgarh',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Siddarth',
+    'student_email':'Siddarth@gmail.com',
+    'student_phone':'9945627415',
+    'student_city':'Jaipur',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Farhan',
+    'student_email':'Farhan@gmail.com',
+    'student_phone':'9945748561',
+    'student_city':'Kota',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Tarun',
+    'student_email':'Tarun@gmail.com',
+    'student_phone':'9945774963',
+    'student_city':'Lucknow',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Prateek',
+    'student_email':'Prateek@gmail.com',
+    'student_phone':'9885774963',
+    'student_city':'Lucknow',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Priyansh',
+    'student_email':'Priyansh@gmail.com',
+    'student_phone':'9457674963',
+    'student_city':'Kota',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Priyanka',
+    'student_email':'Priyanka@gmail.com',
+    'student_phone':'9457674555',
+    'student_city':'Kanpur',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Pratham',
+    'student_email':'Pratham@gmail.com',
+    'student_phone':'9745674555',
+    'student_city':'Lucknow',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Shubhang',
+    'student_email':'Shubhang@gmail.com',
+    'student_phone':'9888974555',
+    'student_city':'Lucknow',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Himanshu',
+    'student_email':'Himanshu@gmail.com',
+    'student_phone':'9119774555',
+    'student_city':'Kerala',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Nitesh',
+    'student_email':'Nitesh@gmail.com',
+    'student_phone':'9119774865',
+    'student_city':'Kochi',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Rahul',
+    'student_email':'Rahul@gmail.com',
+    'student_phone':'8874569233',
+    'student_city':'Goa',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Gaurav',
+    'student_email':'Gaurav@gmail.com',
+    'student_phone':'8874569255',
+    'student_city':'Goa',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Sonam',
+    'student_email':'Sonam@gmail.com',
+    'student_phone':'8874529255',
+    'student_city':'Hisar',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Vikash',
+    'student_email':'Vikash@gmail.com',
+    'student_phone':'8875698725',
+    'student_city':'Patna',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Cinmay',
+    'student_email':'Cinmay@gmail.com',
+    'student_phone':'8875674851',
+    'student_city':'Patna',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Gauri',
+    'student_email':'Gauri@gmail.com',
+    'student_phone':'9977452639',
+    'student_city':'Delhi',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Rohit',
+    'student_email':'Rohit@gmail.com',
+    'student_phone':'9977497854',
+    'student_city':'Delhi',
+    'student_country':'India',
+    'student_courseId':'Patna'
+},
+{
+    'student_name': 'Monika',
+    'student_email':'Monika@gmail.com',
+    'student_phone':'9875544962',
+    'student_city':'Delhi',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Praveen',
+    'student_email':'Praveen@gmail.com',
+    'student_phone':'9875599584',
+    'student_city':'Amritsar',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Murli',
+    'student_email':'Murli@gmail.com',
+    'student_phone':'9875886349',
+    'student_city':'Patna',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Neha',
+    'student_email':'Neha@gmail.com',
+    'student_phone':'9875877652',
+    'student_city':'Goa',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Punit',
+    'student_email':'Punit@gmail.com',
+    'student_phone':'9166243956',
+    'student_city':'Hisar',
+    'student_country':'India',
+    'student_courseId':'Arts'
+},
+{
+    'student_name': 'Suyash',
+    'student_email':'Suyash@gmail.com',
+    'student_phone':'9079540028',
+    'student_city':'Surat',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Aayush',
+    'student_email':'Aayush@gmail.com',
+    'student_phone':'9455558765',
+    'student_city':'Patna',
+    'student_country':'India',
+    'student_courseId':'Science'
+},
+{
+    'student_name': 'Vishnu',
+    'student_email':'Vishnu@gmail.com',
+    'student_phone':'9478786241',
+    'student_city':'Delhi',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+},
+{
+    'student_name': 'Pawan',
+    'student_email':'Pawan@gmail.com',
+    'student_phone':'9478788623',
+    'student_city':'Bombay',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+}
+])
+
+Get a single student / Search in a MongoDB database
+db.students_list.find({student_name:'Aayush'})
+
+Limit the number of students in output
+db.students_list.find().limit(2)
+
+Count the number of students in the output
+db.students_list.find().count()
+
+Create New Student record
+db.students_list.insert({
+    'student_name': 'Bimla',
+    'student_email':'Bimla@gmail.com',
+    'student_phone':'9478788549',
+    'student_city':'Bombay',
+    'student_country':'India',
+    'student_courseId':'Commerce'
+})
+
+Update a record
+db.students_list.update({student_name: 'Praveen'},
+{
+    'student_name': 'Reena'
+}, {upsert:true}
+ )
+
+Delete a record
+db.students_list.remove({student_name:'Neha'})
