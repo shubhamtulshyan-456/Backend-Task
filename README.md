@@ -1,6 +1,7 @@
 # Backend-Task
 
-Build a REST api in node using express and mongo: - 
+Build a REST api in node using express and mongo:
+
 (1.) Design a Student and Course Schema using Mongoose:  
 - Student schema should at least have the following fields: name, email, phone, city, country, courseId etc. 
 - Course schema should have the following fields name, teacher  etc. 
